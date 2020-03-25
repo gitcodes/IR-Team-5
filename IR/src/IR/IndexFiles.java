@@ -47,6 +47,8 @@ import org.apache.lucene.store.FSDirectory;
 import IR.Helper.*;
 import IR.Helper.DocumetParsers.FederalRegister;
 import IR.Helper.DocumetParsers.FinancialTimes;
+import IR.Helper.DocumetParsers.ForeignBroadcastIS;
+import IR.Helper.DocumetParsers.LosAngelTimes;
 
 public class IndexFiles {
   
@@ -65,11 +67,20 @@ public class IndexFiles {
       iwc.setOpenMode(OpenMode.CREATE);
       IndexWriter writer = new IndexWriter(dir, iwc);
       FinancialTimes ft = new FinancialTimes();
-      ft.laodContentFromFile();
+      ft.loadContentFromFile();
       writer.addDocuments(ft.ftDocList);
       FederalRegister fr = new FederalRegister();
-      fr.laodContentFromFile();
+      fr.loadContentFromFile();
       writer.addDocuments(fr.frDocList);
+      
+      ForeignBroadcastIS fbis = new ForeignBroadcastIS();
+      fbis.loadContentFromFile();
+      writer.addDocuments(fbis.fbisDocList);
+      
+      LosAngelTimes latimes = new LosAngelTimes();
+      latimes.loadContentFromFile();
+      writer.addDocuments(latimes.latimesDocList);
+      
       writer.close();
       System.out.println("Index created in'" + indexPath + "'folder");
     } 

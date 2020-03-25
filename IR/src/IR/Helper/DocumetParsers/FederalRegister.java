@@ -23,7 +23,7 @@ public class FederalRegister {
 		this.frDocList = new ArrayList<>();
 	} 
 
-	public void laodContentFromFile() 
+	public void loadContentFromFile() 
 	{
 		String docNo;
 		String  parent;

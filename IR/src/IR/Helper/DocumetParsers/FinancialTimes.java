@@ -26,7 +26,7 @@ public class FinancialTimes {
 		this.ftDocList = new ArrayList<>();
 	} 
 
-	public void laodContentFromFile() 
+	public void loadContentFromFile() 
 	{
 		String headline;
 		String  docno;

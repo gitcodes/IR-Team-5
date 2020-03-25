@@ -19,10 +19,6 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
 
-
-/**
- * Hello world!
- */
 public final class App {
     private App() {
     }
@@ -76,35 +72,39 @@ public final class App {
         	similarity = Similarity.BOOLEAN.toString();
         	choices = choices+ "-" + similarity;
         }
-       isIndexingSuccess =  IndexFiles.createIndex(analyzer);
+       
+       isIndexingSuccess =  IndexFinancialTimesFiles.createFinancialTimesIndex(analyzer);
        if (!isIndexingSuccess)
        {
         System.out.println("Indexing failed");
         return;
        }
        System.out.println("Indexing Succesfull.\n");
-       System.out.println("Parsing Query file.");
-       String path = "./Resource/cran";
+       
+//       System.out.println("Parsing Query file.");
+//       String path = "./Resource/cran";
+//       
+       
        //analyzer = new StandardAnalyzer();
-       QueryLoader ql = new QueryLoader(path, analyzer);
-       ql.loadQueries();
-       List<Query> queries = ql.getQueries();
-       try {
-        PrintWriter writer = new PrintWriter("./outputs.txt", "UTF-8");
-        for (Query query : queries) {
-          ScoreDoc[] hits = SearchFiles.doPagingSearch(query,hitspp,similarity);
-          for (int i = 0; i < hits.length; ++i) {
-            int docId = hits[i].doc;
-            double score = hits[i].score;
-            writer.println(queryCount + " 0 " + (docId + 1) + " " + (i + 1) + " " + score + " "+ choices);
-          }
-          queryCount++;   
-        }
-        writer.close();
-        System.out.println("Result is successfully written to output file");
-       } catch (Exception e) {
-        System.out.println("Error.\n");
-      }
+//       QueryLoader ql = new QueryLoader(path, analyzer);
+//       ql.loadQueries();
+//       List<Query> queries = ql.getQueries();
+//       try {
+//        PrintWriter writer = new PrintWriter("./outputs.txt", "UTF-8");
+//        for (Query query : queries) {
+//          ScoreDoc[] hits = SearchFiles.doPagingSearch(query,hitspp,similarity);
+//          for (int i = 0; i < hits.length; ++i) {
+//            int docId = hits[i].doc;
+//            double score = hits[i].score;
+//            writer.println(queryCount + " 0 " + (docId + 1) + " " + (i + 1) + " " + score + " "+ choices);
+//          }
+//          queryCount++;   
+//        }
+//        writer.close();
+//        System.out.println("Result is successfully written to output file");
+//       } catch (Exception e) {
+//        System.out.println("Error.\n");
+//      }
 
 }
 }

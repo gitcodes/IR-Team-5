@@ -36,5 +36,31 @@ public class EnumTagContainer {
     	RINDOCK; 
 
     }
+    
+    static enum ForeignBroadcastISTags {
+    	DOC,
+    	DOCNO,
+    	HT,
+    	HEADER,
+    	AU,        
+    	DATE1,
+    	TEXT; 
+
+    }
+    static enum LosAngelTimesTags {
+    	DOC,
+    	DOCNO,
+    	P,
+    	HEADLINE,
+    	SUBJECT,
+    	TEXT,
+    	BYLINE,
+    	SECTION,
+    	LENGTH,
+    	DATE,
+    	TYPE,
+    	GRAPHIC
+    	
+    }
 
 }

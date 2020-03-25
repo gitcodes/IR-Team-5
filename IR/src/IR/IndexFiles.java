@@ -45,6 +45,8 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.store.FSDirectory;
 
 import IR.Helper.*;
+import IR.Helper.DocumetParsers.FederalRegister;
+import IR.Helper.DocumetParsers.FinancialTimes;
 
 public class IndexFiles {
   
@@ -59,14 +61,15 @@ public class IndexFiles {
     String indexPath = "./index";
     try {
       Directory dir = FSDirectory.open(Paths.get(indexPath));
-      //Analyzer analyzer = new StandardAnalyzer();
       IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
       iwc.setOpenMode(OpenMode.CREATE);
       IndexWriter writer = new IndexWriter(dir, iwc);
-      String path = "./Resource/cran/cran.all.1400";
-      CreateCranDocument cranDocuments = new CreateCranDocument(path);
-      cranDocuments.loadContentFromFile();
-      writer.addDocuments(cranDocuments.cranDocsList);
+      FinancialTimes ft = new FinancialTimes();
+      ft.laodContentFromFile();
+      writer.addDocuments(ft.ftDocList);
+      FederalRegister fr = new FederalRegister();
+      fr.laodContentFromFile();
+      writer.addDocuments(fr.frDocList);
       writer.close();
       System.out.println("Index created in'" + indexPath + "'folder");
     } 
@@ -75,7 +78,7 @@ public class IndexFiles {
     }
     return isSuccess;
   }
-
+  
 }
 
 

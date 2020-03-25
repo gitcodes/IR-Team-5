@@ -1,0 +1,150 @@
+Number:401
+Content:foreign minorities, Germany
+
+Number:402
+Content:behavioral genetics
+
+Number:403
+Content:osteoporosis
+
+Number:404
+Content:Ireland, peace talks
+
+Number:405
+Content:cosmic events
+
+Number:406
+Content:Parkinson's disease
+
+Number:407
+Content:poaching, wildlife preserves
+
+Number:408
+Content:tropical storms
+
+Number:409
+Content:legal, Pan Am, 103
+
+Number:410
+Content:Schengen agreement
+
+Number:411
+Content:salvaging, shipwreck, treasure
+
+Number:412
+Content:airport security
+
+Number:413
+Content:steel production
+
+Number:414
+Content:Cuba, sugar, exports
+
+Number:415
+Content:drugs, Golden Triangle
+
+Number:416
+Content:Three Gorges Project
+
+Number:417
+Content:creativity
+
+Number:418
+Content:quilts, income
+
+Number:419
+Content:recycle, automobile tires
+
+Number:420
+Content:carbon monoxide poisoning
+
+Number:421
+Content:industrial waste disposal
+
+Number:422
+Content:art, stolen, forged
+
+Number:423
+Content:Milosevic, Mirjana Markovic
+
+Number:424
+Content:suicides
+
+Number:425
+Content:counterfeiting money
+
+Number:426
+Content:law enforcement, dogs
+
+Number:427
+Content:UV damage, eyes
+
+Number:428
+Content:declining birth rates
+
+Number:429
+Content:Legionnaires' disease
+
+Number:430
+Content:killer bee attacks
+
+Number:431
+Content:robotic technology
+
+Number:432
+Content:profiling, motorists, police
+
+Number:433
+Content:Greek, philosophy, stoicism
+
+Number:434
+Content:Estonia, economy
+
+Number:435
+Content:curbing population growth
+
+Number:436
+Content:railway accidents
+
+Number:437
+Content:deregulation, gas, electric
+
+Number:438
+Content:tourism, increase
+
+Number:439
+Content:inventions, scientific discoveries
+
+Number:440
+Content:child labor
+
+Number:441
+Content:Lyme disease
+
+Number:442
+Content:heroic acts
+
+Number:443
+Content:U.S., investment, Africa
+
+Number:444
+Content:supercritical fluids
+
+Number:445
+Content:women clergy
+
+Number:446
+Content:tourists, violence
+
+Number:447
+Content:Stirling engine
+
+Number:448
+Content:ship losses
+
+Number:449
+Content:antibiotics ineffectiveness
+
+Number:450
+Content:King Hussein, peace
+

@@ -1,0 +1,150 @@
+Number:401
+Content:foreign minorities, GermanyA relevant document will focus on the causes of the lack ofintegration in a significant way; that is, the mere mention ofimmigration difficulties is not relevant.  Documents that discussimmigration problems unrelated to Germany are also not relevant.
+
+Number:402
+Content:behavioral geneticsDocuments describing genetic or environmental factors relatingto understanding and preventing substance abuse and addictionsare relevant.  Documents pertaining to attention deficit disorderstied in with genetics are also relevant, as are genetic disordersaffecting hearing or muscles.  The genome project is relevantwhen tied in with behavior disorders (i.e., mood disorders,Alzheimer's disease).
+
+Number:403
+Content:osteoporosisA relevant document may include one or more of thedietary intakes in the prevention of osteoporosis.Any discussion of the disturbance of nutrition andmineral metabolism that results in a decrease inbone mass is also relevant.
+
+Number:404
+Content:Ireland, peace talksAny interruptions to the peace process not directlyattributable to acts of violence are not relevant.
+
+Number:405
+Content:cosmic eventsNew theories or new interpretations concerningknown celestial objects made as a result of newtechnology are not relevant.
+
+Number:406
+Content:Parkinson's diseaseA relevant document identifies a drug or treatmentprogram utilized in patient care and providesan indication of success or failure.
+
+Number:407
+Content:poaching, wildlife preservesA relevant document must discuss poaching in wildlifepreserves, not in the wild itself.  Also deemed relevantis evidence of preventive measures being taken by localauthorities.
+
+Number:408
+Content:tropical stormsThe date of the storm, the area affected, and the extent ofdamage/casualties are all of interest.  Documents that describethe damage caused by a tropical storm as "slight", "limited", or"small" are not relevant.
+
+Number:409
+Content:legal, Pan Am, 103Documents describing any charges, claims, or finespresented to or imposed by any court or tribunal arerelevant, but documents that discuss charges made indiplomatic jousting are not relevant.
+
+Number:410
+Content:Schengen agreementRelevant documents will contain any information about theactions of signatories of the Schengen agreement such as:measures to eliminate border controls (removal of trafficobstacles, lifting of traffic restrictions); implementationof the information system data bank that contains unifiedvisa issuance procedures; or strengthening of border controlsat the external borders of the treaty area in exchange forfree movement at the internal borders.  Discussions of bordercrossovers for business purposes are not relevant.
+
+Number:411
+Content:salvaging, shipwreck, treasureA relevant document will provide information onthe actual locating and recovery of treasure;on the technology which makes possible the discovery,location and investigation of wreckages whichcontain or are suspected of containing treasure; oron the disposition of the recovered treasure.
+
+Number:412
+Content:airport securityA relevant document could identify a specific airportand describe the security measures already in effector proposed for use at that airport.  Relevant itemscould also describe a failure of security that wascited as a contributing cause of a tragedy which cameto pass or which was later averted.  Comparisons betweenand among airports based on the effectiveness of thesecurity of each are also relevant.
+
+Number:413
+Content:steel productionRelevant documents will discuss the processes adaptedby entrepreneurs who have organized so-called "minimills"and are producing steel by methods which differ fromthe old blast furnace method of production.  Documentsthat identify the new companies, the problems they havehave encountered, and/or their successes or failures inthe national and international markets are also relevant.
+
+Number:414
+Content:Cuba, sugar, exportsA relevant document will provide informationregarding Cuba's sugar trade.  Sugar productionstatistics are not relevant unless exportsare mentioned explicitly.
+
+Number:415
+Content:drugs, Golden TriangleA relevant document will discuss drugtrafficking in the Golden Triangle,including organizations that produce ordistribute the drugs; international effortsto combat the traffic; or the quantities ofdrugs produced in the area.
+
+Number:416
+Content:Three Gorges ProjectA relevant document will provide the projecteddate of completion of the project, its estimatedtotal cost, or the estimated electrical output ofthe the finished project.  Discussions of thesocial, political, or ecological impact of theproject are not relevant.
+
+Number:417
+Content:creativityRelevant items include definitions of creativity,descriptions of characteristics associated withcreativity, and factors linked to creativity.
+
+Number:418
+Content:quilts, incomeDocuments mentioning quilting books, quilting classes,quilted objects, and museum exhibits of quilts are all relevant.Documents that discuss AIDs quilts are irrelevant, unlessthere is specific mention that the quilts are being usedfor fundraising.
+
+Number:419
+Content:recycle, automobile tiresA relevant document must show advantageous uses ofrecycled tires, such as:  destructive distillation ofscrap rubber for valuable chemicals, reef buildingfor fish habitats, filler or binder in asphaltroadway mixes, and burning in a controlledenvironment for heat generation.
+
+Number:420
+Content:carbon monoxide poisoningRelevant documents will contain data onwhat carbon monoxide poisoning is, symptoms,causes, and/or prevention.  Advertisements forcarbon monoxide protection products or servicesare not relevant.  Discussions of auto emissionsand air pollution are not relevant even thoughthey can contain carbon monoxide.
+
+Number:421
+Content:industrial waste disposalDocuments that discuss the disposal, storage, or managementof industrial waste---both standard and hazardous---arerelevant.  However, documents that discuss disposal orstorage of nuclear or radioactive waste, or the illegalshipment or dumping of waste to avoid legal disposalmethods are not relevant.
+
+Number:422
+Content:art, stolen, forgedInstances of stolen or forged art in any media are relevant.Stolen mass-produced things, even though they might bedecorative, are not relevant (unless they are mass-produced art reproductions). Pirated software, music, movies,etc. are not relevant.
+
+Number:423
+Content:Milosevic, Mirjana MarkovicAny mention of the Serbian president's wife isrelevant, even if she is not named.  She may be referred toby her nickname, Mira.  A general mention of his family,without specifying his wife, is not relevant.
+
+Number:424
+Content:suicidesThe intent of this query is to find criminal murders thatare being disguised as suicide, but assisted suicides doneout of compassion would be relevant if someone refers tothem as murder.
+
+Number:425
+Content:counterfeiting moneyRelevant documents must cite actual instancesof counterfeiting.   Anti-counterfeiting measures bythemselves are not relevant.
+
+Number:426
+Content:law enforcement, dogsRelevant items include specific information on theuse of dogs during an operation.  Training of dogsand their handlers are also relevant.
+
+Number:427
+Content:UV damage, eyesA relevant document will discuss diseases that resultfrom exposure of the eyes to UV light, treatmentsfor the damage, and/or education programs that helpprevent damage.  Documents discussing treatmentmethods for cataracts and ocular melanoma are relevanteven when a specific cause is not mentioned.  However,documents that discuss radiation damage from nuclearsources or lasers are not relevant.
+
+Number:428
+Content:declining birth ratesTo be relevant, a document will name a country other than the U.S.or China in which the birth rate fell from the rate of theprevious year.  The decline need not have occurred in morethan the one preceding year.
+
+Number:429
+Content:Legionnaires' diseaseTo be relevant, a document must discuss a specific outbreakof Legionnaires' disease.  Documents that address prevention ofor cures for the disease without citing a specific case arenot relevant.
+
+Number:430
+Content:killer bee attacksRelevant documents must cite a specific instance of a humanattacked by killer bees.  Documents that note migration patternsor report attacks on other animals are not relevant unless theyalso cite an attack on a human.
+
+Number:431
+Content:robotic technologyA relevant document will contain information oncurrent applications of robotic technology.  Discussionsof robotics research or simulations of robots arenot relevant.
+
+Number:432
+Content:profiling, motorists, policeA relevant document will report or discuss police departmentcriteria for identifying motorists considered likely to becarrying contraband.  Documents discussing the detention ofindividuals by foreign security forces are not relevant.
+
+Number:433
+Content:Greek, philosophy, stoicismActual references to the philosophy or philosophers,productions of Greek stoic plays, and new "stoic"artistic productions are all relevant.
+
+Number:434
+Content:Estonia, economyDocuments that give concrete economic informationsuch as economic statistics, entering economic unionsand treaties, or monetary performance are relevant,as are discussions of economic issues such astransportation or pollution.
+
+Number:435
+Content:curbing population growthA relevant document must describe an actual case in whichpopulation measures have been taken and their results are known.The reduction measures must have been actively pursued;that is, passive events such as disease or famineinvoluntarily reducing the population are not relevant.
+
+Number:436
+Content:railway accidentsA relevant document provides data on railway accidentsof any sort (i.e., locomotive, trolley, streetcar) whereeither the railroad system or the vehicle or pedestrianinvolved caused the accident.  Documents that discussrailroading in general, new rail lines, new technologyfor safety, and safety and accident preventionare not relevant, unless an actual accident is described.
+
+Number:437
+Content:deregulation, gas, electricDocuments that discuss privatization of government-owned utilities alone are not relevant.  Also, notrelevant are documents that discuss the deregulationof utilities for commercial customers.
+
+Number:438
+Content:tourism, increaseA relevant document will name a country thathas experienced an increase in tourism.The increase must represent the nation as a wholeand tourism in general, not be restricted to onlycertain regions of the country or to some specifictype of tourism (e.g., adventure travel).  Documentsdiscussing only projected increases are not relevant.
+
+Number:439
+Content:inventions, scientific discoveriesThe word "new" in the description is defined as occurringin the 1990s.  Documents that indicate a "recent"invention or scientific discovery are considered relevant.Discoveries made in astronomy or any scientific discoveriesthat are not patentable are not relevant.
+
+Number:440
+Content:child laborA relevant document identifies an action taken by eithera private commercial corporation or governmental organizationto reduce or eliminate the use of child labor in manufacturingoperations.
+
+Number:441
+Content:Lyme diseaseDocuments that discuss current prevention andtreatment techniques for Lyme disease arerelevant.  Reports of research on newtreatments of the disease are also relevant.
+
+Number:442
+Content:heroic actsRelevant documents will contain a description of specificacts.  General statements concerning heroic acts are notrelevant.
+
+Number:443
+Content:U.S., investment, AfricaAll references to U.S. Governmental and private assistanceto sub-Saharan Africa are relevant.  Documents discussingcontributions by reason of U.S. membership in internationalaid organizations are also relevant.
+
+Number:444
+Content:supercritical fluidsTo be relevant, a document must indicate that thefluid involved is achieved by a process of pressurizationproducing the supercritical fluid.
+
+Number:445
+Content:women clergyTo be relevant, a document must indicate either a countrywhere a woman has been installed as clergy or a countrythat is considering such an installation.  The clergy positionmust be as church pastor rather than some other church capacity(e.g., nun or choir member).
+
+Number:446
+Content:tourists, violenceA relevant document must contain accounts of knownharm to tourists.  Evidence of single, isolatedincidents are not relevant.
+
+Number:447
+Content:Stirling engineAny discussion of new developments and applications of theStirling engine (also known as the Stirling cycle) are relevant.
+
+Number:448
+Content:ship lossesAny ship loss due to weather is relevant, either in internationalor coastal waters.
+
+Number:449
+Content:antibiotics ineffectivenessTo be relevant, a document must discuss the reasons orcauses for the ineffectiveness of current antibiotics.Relevant documents may also include efforts by pharmaceuticalcompanies and federal government agencies to find new cures,updating current testing phases, new drugs being tested,and the prognosis for the availability of new and effectiveantibiotics.
+
+Number:450
+Content:King Hussein, peaceA relevant document must include mention of Israel;King Hussein himself as opposed to other Jordanianofficials; discussion of the King's on-going, previousor upcoming efforts; and efforts pertinent to the peaceprocess, not merely Jordan's relationship with othermiddle-east countries or the U.S.
+

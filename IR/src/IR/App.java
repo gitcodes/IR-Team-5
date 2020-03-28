@@ -13,13 +13,14 @@ import org.apache.lucene.search.ScoreDoc;
 import java.util.Scanner;
 import IR.Helper.*;
 import IR.Helper.DocumetParsers.*;
+import IR.Analyzer.CustomAnalyzer;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
-
+import org.apache.lucene.analysis.StopwordAnalyzerBase;
 
 /**
  * Hello world!
@@ -48,18 +49,23 @@ public final class App {
 		int queryCount = 1;
 		int hitspp = 10;
 		int choice;
-		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH");
+		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH \t 3.CUSTOM");
 		Scanner inp= new Scanner(System.in);
 		choice = inp.nextInt();
-		if (choice == 1 )
+		if (choice == 1)
 		{
 			analyzer = new StandardAnalyzer();
 			choices = choices + Analyzers.STANDARD.toString();
 		}
-		else
+		if (choice == 2)
 		{
 			analyzer = new EnglishAnalyzer();
 			choices = choices + Analyzers.ENGLISH.toString();
+		}
+		else
+		{
+			analyzer = new CustomAnalyzer(StandardAnalyzer.ENGLISH_STOP_WORDS_SET);
+			choices = choices + Analyzers.CUSTOM.toString();
 		}
 		System.out.println("Choose your Similarity\n 1.ClassicSimilarity \t 2.BM25Similarity \t 3.BooleanSimilarity");
 		choice = inp.nextInt();

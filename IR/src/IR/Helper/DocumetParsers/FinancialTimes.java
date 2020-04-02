@@ -63,7 +63,7 @@ public class FinancialTimes {
 	private static org.apache.lucene.document.Document createDocument(String headline,String  docno,String  text) throws IOException{
 		org.apache.lucene.document.Document document = new org.apache.lucene.document.Document();
 
-		document.add(new StringField("docno", docno, Field.Store.YES));
+		document.add(new StringField("docNo", docno, Field.Store.YES));
 		document.add(new TextField("headline", headline, Field.Store.YES));
 		document.add(new TextField("text",text, Field.Store.YES));
 		return document;

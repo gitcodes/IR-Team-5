@@ -13,14 +13,14 @@ import org.apache.lucene.search.ScoreDoc;
 import java.util.Scanner;
 import IR.Helper.*;
 import IR.Helper.DocumetParsers.*;
-import IR.Analyzer.CustomAnalyzer;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.document.Document;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.analysis.StopwordAnalyzerBase;
+
 
 /**
  * Hello world!
@@ -47,25 +47,21 @@ public final class App {
 		String choices = "";
 		boolean isIndexingSuccess ;
 		int queryCount = 1;
-		int hitspp = 10;
+		int hitspp = 200;
 		int choice;
-		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH \t 3.CUSTOM");
+		String[] fields = {"text","headline"};
+		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH");
 		Scanner inp= new Scanner(System.in);
 		choice = inp.nextInt();
-		if (choice == 1)
+		if (choice == 1 )
 		{
 			analyzer = new StandardAnalyzer();
 			choices = choices + Analyzers.STANDARD.toString();
 		}
-		if (choice == 2)
+		else
 		{
 			analyzer = new EnglishAnalyzer();
 			choices = choices + Analyzers.ENGLISH.toString();
-		}
-		else
-		{
-			analyzer = new CustomAnalyzer(StandardAnalyzer.ENGLISH_STOP_WORDS_SET);
-			choices = choices + Analyzers.CUSTOM.toString();
 		}
 		System.out.println("Choose your Similarity\n 1.ClassicSimilarity \t 2.BM25Similarity \t 3.BooleanSimilarity");
 		choice = inp.nextInt();
@@ -91,29 +87,28 @@ public final class App {
 			return;
 		}
 		System.out.println("Indexing Successful.\n");
-//		System.out.println("Parsing Query file.");
-//		String path = "./Resource/cran";
-//		//analyzer = new StandardAnalyzer();
-//		QueryLoader ql = new QueryLoader(path, analyzer);
-//		ql.loadQueries();
-//		List<Query> queries = ql.getQueries();
-//		try {
-//			PrintWriter writer = new PrintWriter("./outputs.txt", "UTF-8");
-//			for (Query query : queries) {
-//				ScoreDoc[] hits = SearchFiles.doPagingSearch(query,hitspp,similarity);
-//				for (int i = 0; i < hits.length; ++i) {
-//					int docId = hits[i].doc;
-//					double score = hits[i].score;
-//					writer.println(queryCount + " 0 " + (docId + 1) + " " + (i + 1) + " " + score + " "+ choices);
-//				}
-//				queryCount++;   
-//			}
-//			writer.close();
-//			System.out.println("Result is successfully written to output file");
-//		} catch (Exception e) {
-//			System.out.println("Error.\n");
-//		}
-
+		System.out.println("Reading Queries from topic file.");
+		
+		GenerateQueriesFromTopics generateQueriesFromTopics = new GenerateQueriesFromTopics();
+		generateQueriesFromTopics.generateQueriesFromTopic();
+		PrintWriter writer = new PrintWriter("./outputs.txt", "UTF-8");
+		HashMap<String,Float> boosts = new HashMap<String,Float>();
+		boosts.put("headline", 5f);
+		boosts.put("text", 10f);
+        QueryParser parser = new MultiFieldQueryParser(fields, analyzer,boosts);
+		for (QueryFieldsObject queryFieldsObject: generateQueriesFromTopics.getQueries()) {
+            String queryString = parser.escape(queryFieldsObject.title+" "+queryFieldsObject.description+" "+queryFieldsObject.narrative);
+            Query query = parser.parse(queryString);
+            ScoreDoc[] hits = SearchFiles.doPagingSearch(query,hitspp,similarity);
+			for (int i = 0; i < hits.length; ++i) {
+				String docNo = SearchFiles.getDocument(hits[i]);
+				double score = hits[i].score;
+				writer.println(queryFieldsObject.num + " 0 " +docNo + " " + (i + 1) + " " + score + " "+ choices);
+			}
+		}
+		writer.close();
+		SearchFiles.closeReader();
+		System.out.println("Result is successfully written to output file");		
 
 	}
 

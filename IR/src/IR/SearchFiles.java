@@ -29,24 +29,34 @@ import IR.App.Similarity;
 
 /** Simple command-line based search demo. */
 public class SearchFiles {
-
+  private static IndexSearcher searcher;
+  static IndexReader reader ;
   private SearchFiles() {}
 
 
 public static ScoreDoc[] doPagingSearch(Query query,int hitsPerPage,String similarity) throws IOException {
   String index = "./index";
 
-  IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
-  IndexSearcher searcher = new IndexSearcher(reader);
+  reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
+  searcher = new IndexSearcher(reader);
   if (similarity == Similarity.BOOLEAN.toString())  searcher.setSimilarity(new BooleanSimilarity());
   if (similarity == Similarity.CLASSIC.toString())  searcher.setSimilarity(new ClassicSimilarity());
   if (similarity == Similarity.BM25.toString())  searcher.setSimilarity(new BM25Similarity());
  
 TopDocs results = searcher.search(query, 5 * hitsPerPage);
 ScoreDoc[] hits = results.scoreDocs;
-reader.close();
 return hits;
 
+}
+
+public static String getDocument( ScoreDoc hit) throws IOException {
+	Document hitDoc = searcher.doc(hit.doc);
+	String docNum = hitDoc.get("docNo");
+	return docNum;
+}
+
+public static void closeReader() throws IOException {
+	reader.close();
 }
 
 }

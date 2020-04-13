@@ -30,12 +30,12 @@ public class GenerateQueriesFromTopics {
                         queryFieldsObject.num = newline.substring(14,17);
                     }else if (newline.trim().matches("^<title>[\\s\\S]+")){
 
-                        queryFieldsObject.title = newline.substring(8).trim();
+                        queryFieldsObject.title = newline.substring(8);
 
                     }else if (newline.trim().matches("^<desc>[\\s\\S]+")) {
                         newline = br.readLine();
                         while(newline.length() != 0){
-                            content = content + newline.trim();
+                            content = content + newline+" ";
                             newline = br.readLine();
                         }
 
@@ -43,7 +43,7 @@ public class GenerateQueriesFromTopics {
                     }else if (newline.trim().matches("^<narr>[\\s\\S]+")){
                         newline = br.readLine();
                         while(newline.length() != 0){
-                            content = content + newline.trim();
+                            content = content + newline+" ";
                             newline = br.readLine();
                         }
                         queryFieldsObject.narrative = content;

@@ -7,20 +7,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.lucene.search.BooleanClause.Occur;
+import org.apache.lucene.search.BooleanQuery;
+import org.apache.lucene.search.BoostQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 
 import java.util.Scanner;
 import IR.Helper.*;
 import IR.Helper.DocumetParsers.*;
+import IR.CustomAnalyzer;
+import IR.Tagfilter;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.CharArraySet;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
-
 
 /**
  * Hello world!
@@ -38,7 +43,18 @@ public final class App {
 		BM25,
 		BOOLEAN;     
 	}
-
+    private static CharArraySet getStopWordSet() throws IOException {
+    	
+    	FileInputStream stopfile =  new  FileInputStream("./Resource/stopWords");
+        InputStreamReader inputStreamReader = new InputStreamReader(stopfile);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        CharArraySet stopWordSet = new CharArraySet(1000, true);
+        while (bufferedReader.ready()) {
+            stopWordSet.add(bufferedReader.readLine());
+        }
+        bufferedReader.close();
+        return stopWordSet;
+    }
 
 	public static void main(String[] args) throws Exception {
 
@@ -50,7 +66,7 @@ public final class App {
 		int hitspp = 200;
 		int choice;
 		String[] fields = {"text","headline"};
-		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH");
+		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH \t 3.CUSTOM");
 		Scanner inp= new Scanner(System.in);
 		choice = inp.nextInt();
 		if (choice == 1 )
@@ -58,9 +74,14 @@ public final class App {
 			analyzer = new StandardAnalyzer();
 			choices = choices + Analyzers.STANDARD.toString();
 		}
+		else if (choice == 2) 
+		{
+			analyzer = new EnglishAnalyzer(getStopWordSet());
+			choices = choices + Analyzers.ENGLISH.toString();
+		}
 		else
 		{
-			analyzer = new EnglishAnalyzer();
+			analyzer = new CustomAnalyzer(getStopWordSet());
 			choices = choices + Analyzers.ENGLISH.toString();
 		}
 		System.out.println("Choose your Similarity\n 1.ClassicSimilarity \t 2.BM25Similarity \t 3.BooleanSimilarity");
@@ -88,18 +109,38 @@ public final class App {
 		}
 		System.out.println("Indexing Successful.\n");
 		System.out.println("Reading Queries from topic file.");
-		
+		Tagfilter tf = new Tagfilter();
 		GenerateQueriesFromTopics generateQueriesFromTopics = new GenerateQueriesFromTopics();
 		generateQueriesFromTopics.generateQueriesFromTopic();
 		PrintWriter writer = new PrintWriter("./outputs.txt", "UTF-8");
 		HashMap<String,Float> boosts = new HashMap<String,Float>();
-		boosts.put("headline", 5f);
-		boosts.put("text", 10f);
+		boosts.put("headline", (float) 0.2);
+		boosts.put("text", (float) 0.8);
         QueryParser parser = new MultiFieldQueryParser(fields, analyzer,boosts);
+        Query query = null;
 		for (QueryFieldsObject queryFieldsObject: generateQueriesFromTopics.getQueries()) {
-            String queryString = parser.escape(queryFieldsObject.title+" "+queryFieldsObject.description+" "+queryFieldsObject.narrative);
-            Query query = parser.parse(queryString);
-            ScoreDoc[] hits = SearchFiles.doPagingSearch(query,hitspp,similarity);
+			List<String> narrative = tf.narrativesplit(queryFieldsObject.narrative);
+		    String narrativeSuggested = narrative.get(0);
+		    String narrativeNotSuggested = narrative.get(1);
+		    System.out.println("suggested---" +narrativeSuggested);
+		    System.out.println("_______________________________________");
+		    System.out.println("not suggested -----"+narrativeNotSuggested);
+            String queryString = parser.escape(queryFieldsObject.title+" "+queryFieldsObject.description+" "+narrativeSuggested);
+            if (narrativeNotSuggested.trim().length()>1) {
+            	System.out.println(narrativeNotSuggested);
+            	queryString = parser.escape(queryFieldsObject.title+" "+queryFieldsObject.description);
+            	narrativeNotSuggested = parser.escape(narrativeNotSuggested);
+            	Query queryNeg = new BoostQuery (parser.parse(narrativeNotSuggested),0.01f);
+            	Query stringQuery = parser.parse(queryString);
+            	BooleanQuery.Builder query1 = new BooleanQuery.Builder();
+            	query1.add(stringQuery, Occur.SHOULD);
+            	query1.add(queryNeg, Occur.SHOULD);
+            	query = query1.build();
+            }
+            else {
+            	query = parser.parse(queryString);
+            }
+            ScoreDoc[] hits = SearchFiles.doPagingSearch(query,hitspp,similarity,analyzer);
 			for (int i = 0; i < hits.length; ++i) {
 				String docNo = SearchFiles.getDocument(hits[i]);
 				double score = hits[i].score;

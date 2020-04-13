@@ -6,7 +6,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-13">
+	<classpathentry kind="src" path="Resource"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-13.0.2">
 		<attributes>
 			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -17,9 +18,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/oommenkuruvilla/Desktop/IRandWebSearch/Assignment Two/IR-Team-5/IR/lib/lucene-analyzers-common-8.4.1.jar"/>
-	<classpathentry kind="lib" path="/Users/oommenkuruvilla/Desktop/IRandWebSearch/Assignment Two/IR-Team-5/IR/lib/lucene-core-8.4.1.jar"/>
-	<classpathentry kind="lib" path="/Users/oommenkuruvilla/Desktop/IRandWebSearch/Assignment Two/IR-Team-5/IR/lib/lucene-queryparser-8.4.1.jar"/>
-	<classpathentry kind="lib" path="/Users/oommenkuruvilla/Desktop/IRandWebSearch/Assignment Two/IR-Team-5/IR/lib/jsoup-1.13.1.jar"/>
+	<classpathentry kind="lib" path="D:/Trinity Assignments/IR/eclipse-workspace/Lucene_SE/lucene-8.4.1/analysis/common/lucene-analyzers-common-8.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/Trinity Assignments/IR/eclipse-workspace/Lucene_SE/lucene-8.4.1/queryparser/lucene-queryparser-8.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/Trinity Assignments/IR/eclipse-workspace/Lucene_SE/lucene-8.4.1/core/lucene-core-8.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aman/Downloads/jsoup-1.11.3.jar"/>
+	<classpathentry kind="lib" path="D:/Trinity Assignments/IR/eclipse-workspace/opennlp-tools-1.8.0.jar"/>
+	<classpathentry kind="lib" path="D:/Trinity Assignments/IR/eclipse-workspace/Lucene_SE/lucene-8.4.1/analysis/opennlp/lucene-analyzers-opennlp-8.4.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

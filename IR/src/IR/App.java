@@ -82,7 +82,7 @@ public final class App {
 		else
 		{
 			analyzer = new CustomAnalyzer(getStopWordSet());
-			choices = choices + Analyzers.ENGLISH.toString();
+			choices = choices + Analyzers.CUSTOM.toString();
 		}
 		System.out.println("Choose your Similarity\n 1.ClassicSimilarity \t 2.BM25Similarity \t 3.BooleanSimilarity");
 		choice = inp.nextInt();
@@ -108,6 +108,7 @@ public final class App {
 			return;
 		}
 		System.out.println("Indexing Successful.\n");
+		
 		System.out.println("Reading Queries from topic file.");
 		Tagfilter tf = new Tagfilter();
 		GenerateQueriesFromTopics generateQueriesFromTopics = new GenerateQueriesFromTopics();
@@ -133,9 +134,13 @@ public final class App {
             	Query queryNeg = new BoostQuery (parser.parse(narrativeNotSuggested),0.01f);
             	Query stringQuery = parser.parse(queryString);
             	BooleanQuery.Builder query1 = new BooleanQuery.Builder();
+            	System.out.println("query string");
+            	System.out.println(stringQuery);
             	query1.add(stringQuery, Occur.SHOULD);
             	query1.add(queryNeg, Occur.SHOULD);
             	query = query1.build();
+            	
+            	
             }
             else {
             	query = parser.parse(queryString);
@@ -146,6 +151,7 @@ public final class App {
 				double score = hits[i].score;
 				writer.println(queryFieldsObject.num + " 0 " +docNo + " " + (i + 1) + " " + score + " "+ choices);
 			}
+			
 		}
 		writer.close();
 		SearchFiles.closeReader();

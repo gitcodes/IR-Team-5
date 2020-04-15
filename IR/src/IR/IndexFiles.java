@@ -69,17 +69,21 @@ public class IndexFiles {
       FinancialTimes ft = new FinancialTimes();
       ft.loadContentFromFile();
       writer.addDocuments(ft.ftDocList);
+      System.out.println("ft parsed");
       FederalRegister fr = new FederalRegister();
       fr.loadContentFromFile();
       writer.addDocuments(fr.frDocList);
+      System.out.println("fr parsed");
       
       ForeignBroadcastIS fbis = new ForeignBroadcastIS();
       fbis.loadContentFromFile();
       writer.addDocuments(fbis.fbisDocList);
+      System.out.println("fbis parsed");
       
       LosAngelTimes latimes = new LosAngelTimes();
       latimes.loadContentFromFile();
       writer.addDocuments(latimes.latimesDocList);
+      System.out.println("lat parsed");
       
       writer.close();
       System.out.println("Index created in'" + indexPath + "'folder");

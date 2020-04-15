@@ -66,7 +66,7 @@ public final class App {
 		int hitspp = 200;
 		int choice;
 		String[] fields = {"text","headline"};
-		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH \t 3.CUSTOM");
+		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH \t 3.CUSTOM/test");
 		Scanner inp= new Scanner(System.in);
 		choice = inp.nextInt();
 		if (choice == 1 )

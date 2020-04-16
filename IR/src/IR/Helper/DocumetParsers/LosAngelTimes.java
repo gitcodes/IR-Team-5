@@ -67,6 +67,8 @@ public class LosAngelTimes {
 		document.add(new TextField("author", byline, Field.Store.YES));
 		document.add(new TextField("headline",headline, Field.Store.YES));
 		document.add(new TextField("date",date, Field.Store.YES));
+
+		document.add(new TextField("others", docNo + byline + date,Field.Store.YES));
 		return document;
 	}	
 	

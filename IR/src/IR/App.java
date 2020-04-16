@@ -65,8 +65,8 @@ public final class App {
 		int queryCount = 1;
 		int hitspp = 200;
 		int choice;
-		String[] fields = {"text","headline"};
-		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH \t 3.CUSTOM/test");
+		String[] fields = {"text","headline","others"};
+		System.out.println("Choose your Analyser\n 1.STANDARD \t 2.ENGLISH \t 3.CUSTOM");
 		Scanner inp= new Scanner(System.in);
 		choice = inp.nextInt();
 		if (choice == 1 )
@@ -112,10 +112,11 @@ public final class App {
 		Tagfilter tf = new Tagfilter();
 		GenerateQueriesFromTopics generateQueriesFromTopics = new GenerateQueriesFromTopics();
 		generateQueriesFromTopics.generateQueriesFromTopic();
-		PrintWriter writer = new PrintWriter("./outputs.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("../trec_eval-9.0.7/outputs.txt", "UTF-8");
 		HashMap<String,Float> boosts = new HashMap<String,Float>();
-		boosts.put("headline", (float) 0.2);
-		boosts.put("text", (float) 0.8);
+		boosts.put("headline", 2f);
+		boosts.put("text", 7f);
+		boosts.put("others", 1f);
         QueryParser parser = new MultiFieldQueryParser(fields, analyzer,boosts);
         Query query = null;
 		for (QueryFieldsObject queryFieldsObject: generateQueriesFromTopics.getQueries()) {

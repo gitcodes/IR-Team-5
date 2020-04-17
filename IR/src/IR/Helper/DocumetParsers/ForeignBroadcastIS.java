@@ -65,6 +65,7 @@ public class ForeignBroadcastIS {
 		document.add(new TextField("ht", ht, Field.Store.YES));
 		document.add(new TextField("headline", header, Field.Store.YES));
 		document.add(new TextField("text",text, Field.Store.YES));
+		document.add(new TextField("others", docNo + ht,Field.Store.YES));
 		return document;
 	}	
 

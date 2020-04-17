@@ -66,6 +66,7 @@ public class FinancialTimes {
 		document.add(new StringField("docNo", docno, Field.Store.YES));
 		document.add(new TextField("headline", headline, Field.Store.YES));
 		document.add(new TextField("text",text, Field.Store.YES));
+		document.add(new TextField("others", docno,Field.Store.YES));
 		return document;
 	}	
 

@@ -63,6 +63,7 @@ public class FederalRegister {
 		document.add(new StringField("docNo", docNo, Field.Store.YES));
 		document.add(new TextField("parent", parent, Field.Store.YES));
 		document.add(new TextField("text",text, Field.Store.YES));
+		document.add(new TextField("others", docNo + parent,Field.Store.YES));
 		return document;
 	}	
 

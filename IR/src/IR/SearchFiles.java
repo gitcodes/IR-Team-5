@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -24,7 +25,7 @@ import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.*;
 import org.apache.lucene.search.similarities.BooleanSimilarity;
 import org.apache.lucene.search.similarities.ClassicSimilarity;
 import org.apache.lucene.store.FSDirectory;
@@ -43,9 +44,11 @@ public static ScoreDoc[] doPagingSearch(Query query,int hitsPerPage,String simil
 
   reader = DirectoryReader.open(FSDirectory.open(Paths.get(index)));
   searcher = new IndexSearcher(reader);
-  if (similarity == Similarity.BOOLEAN.toString())  searcher.setSimilarity(new BooleanSimilarity());
+  org.apache.lucene.search.similarities.Similarity[]  sim = {new BM25Similarity(1.5f,.7f),new BM25Similarity(1.2f,1f)};   
+  if (similarity == Similarity.MULTI.toString())  searcher.setSimilarity(new MultiSimilarity(sim));
   if (similarity == Similarity.CLASSIC.toString())  searcher.setSimilarity(new ClassicSimilarity());
   if (similarity == Similarity.BM25.toString())  searcher.setSimilarity(new BM25Similarity());
+  if (similarity == Similarity.BOOLEAN.toString())  searcher.setSimilarity(new BooleanSimilarity());
   try {
 	  	ScoreDoc[] hits = {};
 		Query queryexpnded= expandQuery(searcher,query,hits,reader,analyzer);

@@ -41,11 +41,12 @@ public final class App {
 	enum Similarity {
 		CLASSIC,
 		BM25,
-		BOOLEAN;     
+		BOOLEAN,
+		MULTI;     
 	}
     private static CharArraySet getStopWordSet() throws IOException {
     	
-    	FileInputStream stopfile =  new  FileInputStream("./Resource/stopWords");
+    	FileInputStream stopfile =  new  FileInputStream("./Resource/stop");
         InputStreamReader inputStreamReader = new InputStreamReader(stopfile);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         CharArraySet stopWordSet = new CharArraySet(1000, true);
@@ -82,23 +83,28 @@ public final class App {
 		else
 		{
 			analyzer = new CustomAnalyzer(getStopWordSet());
-			choices = choices + Analyzers.ENGLISH.toString();
+			choices = choices + Analyzers.CUSTOM.toString();
 		}
-		System.out.println("Choose your Similarity\n 1.ClassicSimilarity \t 2.BM25Similarity \t 3.BooleanSimilarity");
+		System.out.println("Choose your Similarity\n 1.BM25Similarity \t 2.MultiSimilarity");
 		choice = inp.nextInt();
-		if (choice == 2 )
+		if (choice == 1 )
 		{
 			similarity = Similarity.BM25.toString();
 			choices = choices+ "-" + similarity;
 		}
-		else if (choice == 1 )
-		{
-			similarity = Similarity.CLASSIC.toString();
-			choices = choices+ "-" + similarity;
-		}
+//		else if (choice == 1 )
+//		{
+//			similarity = Similarity.CLASSIC.toString();
+//			choices = choices+ "-" + similarity;
+//		}
+//		else if (choice == 4 )
+//		{
+//			similarity = Similarity.MULTI.toString();
+//			choices = choices+ "-" + similarity;
+//		}
 		else
 		{
-			similarity = Similarity.BOOLEAN.toString();
+			similarity = Similarity.MULTI.toString();
 			choices = choices+ "-" + similarity;
 		}
 		isIndexingSuccess =  IndexFiles.createIndex(analyzer);
@@ -114,8 +120,9 @@ public final class App {
 		generateQueriesFromTopics.generateQueriesFromTopic();
 		PrintWriter writer = new PrintWriter("./outputs.txt", "UTF-8");
 		HashMap<String,Float> boosts = new HashMap<String,Float>();
-		boosts.put("headline", (float) 0.2);
-		boosts.put("text", (float) 0.8);
+		boosts.put("headline",3f);
+		boosts.put("text",10f);
+		boosts.put("others",1f);
         QueryParser parser = new MultiFieldQueryParser(fields, analyzer,boosts);
         Query query = null;
 		for (QueryFieldsObject queryFieldsObject: generateQueriesFromTopics.getQueries()) {
